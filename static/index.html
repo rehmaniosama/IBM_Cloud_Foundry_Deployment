@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello World</title>
+
+    <!-- Bootstrap -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/lib/jquery.i18n/jquery.i18n.js"></script>
+    <script src="js/lib/jquery.i18n/jquery.i18n.messagestore.js"></script>
+    <script src="js/lib/jquery.i18n/jquery.i18n.fallbacks.js"></script>
+    <script src="js/lib/jquery.i18n/jquery.i18n.language.js"></script>
+    <script src="js/lib/jquery.i18n/jquery.i18n.parser.js"></script>
+    <script src="js/lib/jquery.i18n/jquery.i18n.emitter.js"></script>
+    <script src="js/lib/jquery.i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script src="antixss.js" type="text/javascript"></script>
+    <script>
+        $( document ).ready(function() {
+            $.i18n().load( {
+                en: {
+                    "welcome": "WELCOME TO IBM CLOUD DEPLOYED WEB",
+                    "name": "name",
+                    "what_is_your_name": "you put your name here",
+                    "hello": "Hello $1, you are running this application locally you may add the cloudant database!",
+                    "added_to_database": "Hello $1, THIS RESPONSE FROM THE IBM CLOUDANT DATABASE cloudant database",
+                    "database_contents": "Database contents from CLOUDANT DB: "
+                },
+                ja: {
+                    "welcome": "ようこそ。",
+                    "name": "名前",
+                    "what_is_your_name": "お名前を教えてください。",
+                    "hello": "こんにちは $1",
+                    "added_to_database": "こんにちは $1 さん、あなたをデータベースに追加しました。",
+                    "database_contents": "データベースの内容: "
+                }
+            } );
+            $('body').i18n();
+            $('#user_name').attr("placeholder", $.i18n('name') );
+        });
+     </script>
+
+<div class="container-fluid">
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="30" height="30" class="d-inline-block align-top" alt="">
+        X-COFFEE
+      </a>
+        <a class="navbar-brand" href="#">HOME</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Comming soon</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+</head>
+<body>
+<div class="container mb-4 mt-4" id="container">
+    <h1 data-i18n="welcome" style="color:#801919;" align="center"></h1> <!- Welcome ->
+    <div id="nameInput" class="input-group-lg center-block helloInput">
+        <p class="lead" align="center" data-i18n="what_is_your_name"></p>
+        <input id="user_name" type="text" class="form-control" aria-describedby="sizing-addon1" value="" />
+    </div>
+    <p id="response" class="lead text-center"></p>
+    <p id="databaseNames" class="lead text-center"></p>
+</div>
+
+
+<div class="container mb-4 mt-4">
+  <div class="row align-items-center">
+    <div class="col">
+      <article>
+        <h2>X-HOLIDAY BLEND</h2>
+        <p>Aromatic and Cedar Every sip of this much-anticipated blend is a beautiful expression of the season--at once familiar and magical.
+            This year our master blenders have joined three rare and remarkable coffees: Hacienda Alsacia®
+            pairs with aged Sumatra and Sulawesi to create a savory spice and sweet brightness to the holidays.</p>
+      </article>
+    </div>
+    <div class="col">
+      <img  src="https://images.pexels.com/photos/544113/pexels-photo-544113.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" width="700" height="500">
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width:22rem; height: 100%;">
+            <img class="card-img-top" src="https://images.pexels.com/photos/942733/pexels-photo-942733.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+            <div class="card-body">
+                <h5 class="card-title">X-DARK BLEND</h5>
+                <p class="card-text">Bring the spirit of the season home with our jubilant Starbucks® Holiday Blend.
+                    This smooth coffee combines seasonal, bright Latin American beans with mellow Sumatran coffee—roasted to perfection</p>
+                <a href="https://www.starbucks.com/menu/product/295/whole-bean?parent=%2Fat-home-coffee%2Fwhole-bean%2Fmedium-roast" class="btn btn-primary">show more</a>
+            </div>
+        </div>
+      </div>
+      <div class="col ">
+        <div class="card" style="width: 22rem; height: 100%;">
+          <img class="card-img-top" src="https://images.pexels.com/photos/796614/pexels-photo-796614.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+          <div class="card-body">
+            <h5 class="card-title">X-MEDIUM BLEND</h5>
+            <p class="card-text">A balance of nutty and maple flavours create a full-bodied, subtly herbal sip.
+                No matter what is on the menu, this crowd-pleasing cup pairs with any celebration.</p>
+            <a href="https://www.starbucks.com/menu/product/2123285/whole-bean?parent=%2Fat-home-coffee%2Fwhole-bean%2Fstarbucks-reserve" class="btn btn-primary">show more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 22rem; height: 100%;">
+          <img class="card-img-top" src="https://images.pexels.com/photos/1323730/pexels-photo-1323730.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+          <div class="card-body">
+            <h5 class="card-title">X-TINT BLEND</h5>
+            <p class="card-text">The brilliant hues of the Costa Rican oxcart celebrate coffee’s vitality in the Naranjo region,
+                where smallholder farmers in the Naranjo Cooperative worked together to produce this elevated lot rooted in community pride.</p>
+            <a href="https://www.starbucks.com/menu/product/2123285/whole-bean?parent=%2Fat-home-coffee%2Fwhole-bean%2Fstarbucks-reserve" class="btn btn-primary">show more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+ <div class="container">
+    <div class="row mt-4">
+      <div class="card-group">
+        <div class="card">
+          <img class="card-img-top" src="https://images.pexels.com/photos/374147/pexels-photo-374147.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title">Guatemala Beans</h5>
+              <p class="card-text">lemon, chocolate and soft spice notes with an elegant mouthfeel unique to this region.</p>
+              <div class="d-grid gap-2">
+                  <a href="https://www.nytimes.com/section/health" class="btn btn-primary">show more</a>
+              </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://images.pexels.com/photos/373639/pexels-photo-373639.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title">Espresso Roast</h5>
+              <p class="card-text">delightfully well-rounded and wonderfully versatile—delicious hot or served over ice.</p>
+              <div class="d-grid gap-2">
+                  <a href="https://www.nytimes.com/section/health" class="btn btn-primary">Explore more!</a>
+              </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://images.pexels.com/photos/2836945/pexels-photo-2836945.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title">Guatemala Antigua Beans</h5>
+              <p class="card-text">Coffee from the Antigua Valley of Guatemala is the touchstone of quality</p>
+              <div class="d-grid gap-2">
+                  <a href="https://www.nytimes.com/section/health" class="btn btn-primary">show more</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container mb-4 mt-4">
+  <div class="row align-items-center">
+    <div class="col">
+      <img  src="https://images.pexels.com/photos/373888/pexels-photo-373888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" width="700" height="500">
+    </div>
+    <div class="col">
+      <article>
+        <h2>X-Blonde Espresso Roast</h2>
+        <p>Drawing on four decades of coffee artistry, we set out to craft an espresso that delivers a softer,
+                  more balanced taste to your cup and blends beautifully with milk. We started by combining select Latin American and East African beans,
+                  and then carefully roasted them to coax out their sweet, vibrant notes.
+                  The result is delightfully well-rounded and wonderfully versatile—delicious hot or served over ice.</p>
+      </article>
+    </div>
+  </div>
+</div>
+
+
+
+ <div class="container">
+    <div class="row mt-4">
+      <div class="card-group">
+        <div class="card">
+          <img class="card-img-top" src="https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title">Blend Mug</h5>
+              <p class="card-text">You can choose from our wide collections</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://images.pexels.com/photos/1752806/pexels-photo-1752806.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+          <div class="card-body">
+             <h5 class="card-title">Extra Hot</h5>
+              <p class="card-text">You can choose from our wide collections</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://images.pexels.com/photos/704813/pexels-photo-704813.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title">Most Blend</h5>
+              <p class="card-text">You can choose from our wide collections</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://images.pexels.com/photos/1143760/pexels-photo-1143760.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title">Enjoy Taste</h5>
+              <p class="card-text">You can choose from our wide collections</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://images.pexels.com/photos/2067628/pexels-photo-2067628.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title">Coffee Mug</h5>
+              <p class="card-text">You can choose from our wide collections</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<footer>
+<div class="container-fluid mt-4">
+  <div class="card">
+    <div class="card-header">
+      Featured
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">TODO LIST</h5>
+      <p class="card-text">you want to add some notes!</p>
+      <a href="https://mytodotestapp.herokuapp.com/todo/" class="btn btn-primary">click here</a>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <span><a href="https://www.ibm.com/cloud" target="_blank">more info regarding how to use ibm cloud</a></span>
+    </div>
+        <span>This is test website deployed on IBM cloud content of this is self generated or taken from open source</span>
+</div>
+</footer>
+
+
+</html>
+
+
+<script>
+    	//Submit data when enter key is pressed
+        $('#user_name').keydown(function(e) {
+        	var name = $('#user_name').val();
+            if (e.which == 13 && name.length > 0) { //catch Enter key
+            	//POST request to API to create a new visitor entry in the database
+                $.ajax({
+				  method: "POST",
+				  url: "./api/visitors",
+				  contentType: "application/json",
+				  data: JSON.stringify({name: name })
+				})
+                .done(function(data) {
+                    if(data && data.name){
+                        if(data._id)
+                            $('#response').html($.i18n('added_to_database', AntiXSS.sanitizeInput(data.name)));
+                        else
+                            $('#response').html($.i18n('hello', AntiXSS.sanitizeInput(data.name))); 
+                    }
+                    else {
+                        $('#response').html(AntiXSS.sanitizeInput(data));
+                    }
+                    $('#nameInput').hide();
+                    getNames();
+                });
+            }
+        });
+
+        //Retrieve all the visitors from the database
+        function getNames(){
+          $.get("./api/visitors")
+              .done(function(data) {
+                  if(data.length > 0) {
+                    data.forEach(function(element, index) {
+                      data[index] = AntiXSS.sanitizeInput(element)
+                    });
+                    $('#databaseNames').html($.i18n('database_contents') + JSON.stringify(data));
+                  }
+              });
+          }
+
+          //Call getNames on page load.
+          getNames();
+
+
+    </script>

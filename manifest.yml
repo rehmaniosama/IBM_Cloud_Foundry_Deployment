@@ -1,0 +1,5 @@
+---
+applications:
+ - name: mycoffeeapp
+   random-route: true
+   memory: 128M
