@@ -1,5 +1,5 @@
-Prerequisite
-
+**1. Prerequisite**
+_____________________
 You'll need following to start  
 a. Python
 b. IBM Cloud Account (if you are new to it create one it's free and only takes a min or so)
@@ -7,7 +7,9 @@ c. Cloud Foundry CLI
 d. Git
 If you have knowledge how flask and python works it is plus point
 
-Clone Repo or Build Locally
+**2. Clone Repo or Build Locally**
+__________________________________
+
 Before you start it's recommended to created virtual environment (see python doc for creating virtual env) and activate it.
 You can create Flask app locally as you wish or clone it form the GitHub repo link. After cloning the repo headed into cloned folder.
 
@@ -15,8 +17,10 @@ You can create Flask app locally as you wish or clone it form the GitHub repo li
     cd foldername
 
 Familiarized yourself with different files in clone folder
-Install Requirements and Run Locally
-Every application run on it's dependences which is listed in requirements.txt file.
+
+**3. Install Requirements and Run Locally**
+________________________________________
+Every application run on it's dependencies which is listed in **requirements.txt** file.
 It's important to have virtual environment activated so you can install these dependencies in ideally separate environment
 so that these can not clash with your operating system or other python dependencies. 
 
@@ -32,7 +36,9 @@ This will start your development server on
 
 
 Once you will done with modification of code as you needed we wish to continue further to prepare our app for deployment on IBM Cloud Foundry 
-Configure Flask app for Deployment on IBM Cloud Foundry
+
+**4. Configure Flask app for Deployment on IBM Cloud Foundry**
+______________________________________________________________
 You have notice that manifest.yml file in clone folder with some basic configurations regarding your app. 
 This file hold basic info regarding your app such as 
 
@@ -49,7 +55,8 @@ you should change application name and allocate the memory
        random-route: True
        memory: 256M
 
-Deploy Flask app on IBM Cloud Foundry
+**5. Deploy Flask app on IBM Cloud Foundry**
+___________________________________________
 For deploy app onto IBM Cloud Foundry you will need IBM account and Cloud Foundry CLI 
 first you will need to login into IBM account with following command and choose account if you have multiple
 once you login into your account then 
@@ -80,8 +87,8 @@ this will list all apps including current deployed app.
 After deploy this app is now live but have a problem all the data or
 user input didn't able to store in database now it's turn to store data in IBM Cloudant database.
 
-Add IBM Cloudant Database:
-
+**6. Add IBM Cloudant Database**
+________________________________
 Cloudant Database is NoSQL database
 we'll add this database and configure Flask app accordingly so it can run locally and also run on IBM Cloud.
 
@@ -92,7 +99,9 @@ d. When you add or remove service from IBM Cloud you need to select Restage whic
 This  VCAP_SERVICES environment variable  is only available once application run on IBM Cloud.
 Environment variable  is good way to store secrete information i-e your password, secret keys and all. 
 Instead of hardcoding you can refer your environment variable in source code.
-Store data locally in Database
+
+**7. Cloudant Database in use**
+_______________________________
 As you see in hello.py file under the VCAP_SERVICES 
 which is looking for local json file to load to connect database
 local json store the service credential to connect Cloudant database 
@@ -151,6 +160,9 @@ You can view your deployed app live from any where go to URL
    
     https://my-new-app-cheerful-cassowary-wk.mybluemix.net/
 
+You also can read step by step guide from start to end 
+    
+    https://lifeissosimpleman.blogspot.com/2020/12/ibm-cloud-deploy-pythonflask-app-to.html  
 
 
 
